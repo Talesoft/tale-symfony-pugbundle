@@ -1,0 +1,12 @@
+
+services:
+
+    templating.engine.jade:
+        class: Tale\Symfony\JadeBundle\JadeEngine
+        arguments:
+            - %jade.options%
+            - "@service_container"
+            - "@templating.name_parser"
+            - "@templating.loader"
+        tags:
+            - { name: templating.engine }
